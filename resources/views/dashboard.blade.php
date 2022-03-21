@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Menu post data -->
     <form method="POST" action="{{url('post-data')}}">
         {{csrf_field()}}
         <div class="card">
@@ -95,4 +96,17 @@
         <br>
     </div>
 </form>
+
+<!-- View data dari DB -->
+@foreach($data as $a)
+    <div class="card" style="margin-bottom: 2%">
+        <div class="col-md-12" style="margin-top: 1%;">
+            <h3><p><center>Biodata Karyawan</center></p></h3>
+            <h5><p>Nama: {{$a->nama}}</p></h5>
+            <h5><p>Alamat: {{$a->alamat}}</p></h5>
+            <h5><p>No. KTP: {{$a->ktp}}</p></h5>
+            <h5><p>Pendidikan:</p></h5>
+        </div>
+    </div>
+@endforeach
 @endsection

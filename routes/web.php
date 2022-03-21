@@ -12,11 +12,7 @@
 */
 
 Auth::routes();
-Route::get('/', function () {
-    return view('dashboard');
-});
-Route::get('/home', function(){
-	return view('dashboard');
-});
+Route::get('/','DtpController@view');
+Route::get('/home','DtpController@view');
 
 Route::post('post-data','DtpController@post');

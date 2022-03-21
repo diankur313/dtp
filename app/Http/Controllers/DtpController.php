@@ -11,6 +11,11 @@ use Carbon\Carbon;
 
 class DtpController extends Controller
 {
+    public function view()
+    {
+        $data = karyawan::get();
+        return view('dashboard',compact('data'));
+    }
     public function post(Request $req)
     {
 
@@ -39,5 +44,6 @@ class DtpController extends Controller
             $insert2 = array('ktp'=>$no_ktp,'perusahaan'=>$post2[$i++],'jabatan'=> $post2[$i++],'tahun'=> $post2[$i++],'keterangan'=> $post2[$i++],'created_at'=>Carbon::now(),'updated_at'=>Carbon::now());
                 DB::table('pekerjaan')->insert($insert2);
         }
+        return back();
     }
 }
