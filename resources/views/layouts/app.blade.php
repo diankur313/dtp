@@ -36,6 +36,7 @@
 <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
 
 <script>
+  // Fungsi Jquery tabel dinamis riwayat pendidikan
     $(document).ready(function(){  
                   var i=1;  
                   $('#add').click(function(){  
@@ -48,12 +49,12 @@
                   });  
     });  
 
-
+  // Fungsi Jquery tabel dinamis riwayat pekerjaan
     $(document).ready(function(){  
                   var i=1;  
                   $('#add2').click(function(){  
                        i++;  
-                       $('#dynamic_field_2').append('<tr id="row'+i+'"><td><div class="row"><div class="col-md-3"><input type="text" name="row[][perusahaan]" placeholder="Perusahaan" class="form-control name_list" required /></div><div class="col-md-3"><input type="text" name="row[][jabatan]" placeholder="Jabatan" class="form-control name_list" required /></div><div class="col-md-3"><input type="number" name="row[][tahun]" placeholder="Tahun" class="form-control name_list" required /></div><div class="col-md-3"><input type="text" name="row[][keterangan]" placeholder="Keterangan" class="form-control name_list" required /></div></div></td><td style="border: 1px solid black; width:10px"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><h4>-</h4></button></td></tr>');
+                       $('#dynamic_field_2').append('<tr id="row'+i+'"><td><div class="row"><div class="col-md-3"><input type="text" name="row2[]" placeholder="Perusahaan" class="form-control name_list" required /></div><div class="col-md-3"><input type="text" name="row2[]" placeholder="Jabatan" class="form-control name_list" required /></div><div class="col-md-3"><input type="number" name="row2[]" placeholder="Tahun" class="form-control name_list" required /></div><div class="col-md-3"><input type="text" name="row2[]" placeholder="Keterangan" class="form-control name_list" required /></div></div></td><td style="border: 1px solid black; width:10px"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove"><h4>-</h4></button></td></tr>');
                   });  
                   $(document).on('click', '.btn_remove', function(){  
                        var button_id = $(this).attr("id");   

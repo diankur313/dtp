@@ -29,6 +29,7 @@
                 </div>
             </div>
             <br>
+            <!-- Tabel Riwayat Pendidikan -->
             <div class="row">
                 <div class="col-md-12">
                     <label>Riwayat Pendidikan:</label>
@@ -56,6 +57,36 @@
                 </div>
             </div>
             <br>
+            <br>
+        <!-- Tabel Pengalaman Pekerjaan -->
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Pengalaman Pekerjaan:</label>
+                    <table class="table table-bordered" id="dynamic_field_2">  
+                        <tr>  
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" name="row2[]" class="form-control" placeholder="Perusahaan" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="row2[]" class="form-control" placeholder="Jabatan" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="number" name="row2[]" class="form-control" placeholder="Tahun" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="text" name="row2[]" class="form-control" placeholder="Keterangan" required>
+                                    </div>
+                                </div>
+                            </td>  
+                            <td><button type="button" name="add" id="add2" class="btn btn-success"><h2>+</h2></button></td>  
+                        </tr>  
+                    </table> 
+                </div>
+            </div>
+            <br>
+            </div>
         </div>
         <br>
         <div class="col-md-12">

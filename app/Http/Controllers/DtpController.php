@@ -28,8 +28,16 @@ class DtpController extends Controller
     	$post = $req->row;
     	for ($i=0; $i<count($post);)
     	{ 
-    		$insert = array('ktp'=>$no_ktp,'nama_sekolah'=>$post[$i++],'jurusan'=> $post[$i++],'th_masuk'=> $post[$i++],'th_lulus'=> $post[$i++]);
+    		$insert = array('ktp'=>$no_ktp,'nama_sekolah'=>$post[$i++],'jurusan'=> $post[$i++],'th_masuk'=> $post[$i++],'th_lulus'=> $post[$i++], 'created_at'=>Carbon::now(),'updated_at'=>Carbon::now());
     			DB::table('pendidikan')->insert($insert);
     	}
+
+        //input pengalaman pekerjaan
+        $post2 = $req->row2;
+        for ($i=0; $i<count($post2);)
+        { 
+            $insert2 = array('ktp'=>$no_ktp,'perusahaan'=>$post2[$i++],'jabatan'=> $post2[$i++],'tahun'=> $post2[$i++],'keterangan'=> $post2[$i++],'created_at'=>Carbon::now(),'updated_at'=>Carbon::now());
+                DB::table('pekerjaan')->insert($insert2);
+        }
     }
 }
