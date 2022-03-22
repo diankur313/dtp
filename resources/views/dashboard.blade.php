@@ -106,6 +106,53 @@
             <h5><p>Alamat: {{$a->alamat}}</p></h5>
             <h5><p>No. KTP: {{$a->ktp}}</p></h5>
             <h5><p>Pendidikan:</p></h5>
+            <table class="table table-bordered table-hover dataTable no-footer" role="grid" style="width:100%;">
+                <thead>
+                    <tr class="warning">
+                        <th><center>Nama Sekolah / Universitas</center></th>
+                        <th><center>Jurusan</center></th>
+                        <th><center>Tahun Masuk</center></th>
+                        <th><center>Tahun Lulus</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{$a->pendidikan->nama_sekolah}}</td>
+                        <td>{{$a->pendidikan->jurusan}}</td>
+                        <td>{{$a->pendidikan->th_masuk}}</td>
+                        <td>{{$a->pendidikan->th_lulus}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5><p>Pengalaman Kerja:</p></h5>
+            <table class="table table-bordered table-hover dataTable no-footer" role="grid" style="width:100%;">
+                <thead>
+                    <tr class="warning">
+                        <th><center>Perusahaan</center></th>
+                        <th><center>Jabatan</center></th>
+                        <th><center>Tahun</center></th>
+                        <th><center>Keterangan</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{$a->pekerjaan->perusahaan}}</td>
+                        <td>{{$a->pekerjaan->jabatan}}</td>
+                        <td>{{$a->pekerjaan->tahun}}</td>
+                        <td>{{$a->pekerjaan->keterangan}}</td>
+                    </tr>
+                </tbody>
+            </table>
+             <div class="row">
+                <!-- Form untuk menghapus data-->
+                <form action="delete={{$a->ktp}}" id="delete{{$a->ktp}}" method="POST">{{csrf_field()}}</form>
+                <div class="col-md-6">
+                    <button type="submit" form="edit{{$a->ktp}}" class="btn btn-info btn-block">Edit</button>
+                </div>
+                <div class="col-md-6">
+                    <button type="submit" form="delete{{$a->ktp}}" class="btn btn-danger btn-block">Hapus</button>
+                </div>
+            </div>
         </div>
     </div>
 @endforeach

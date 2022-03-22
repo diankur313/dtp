@@ -13,5 +13,6 @@ class pendidikan extends Model
     						'jurusan',
     						'th_masuk',
     						'th_lulus',
+    		
     					  ];
 }
