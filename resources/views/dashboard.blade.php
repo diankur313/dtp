@@ -77,7 +77,7 @@
                                         <input type="number" name="row2[]" class="form-control" placeholder="Tahun" required>
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="text" name="row2[]" class="form-control" placeholder="Keterangan" required>
+                                        <input type="text" name="row2[]" class="form-control" placeholder="Keterangan">
                                     </div>
                                 </div>
                             </td>  
@@ -116,12 +116,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{{$a->pendidikan->nama_sekolah}}</td>
-                        <td>{{$a->pendidikan->jurusan}}</td>
-                        <td>{{$a->pendidikan->th_masuk}}</td>
-                        <td>{{$a->pendidikan->th_lulus}}</td>
-                    </tr>
+                    @foreach($a->pendidikan as $b)
+                        <tr>
+                            <td>{{$b->nama_sekolah}}</td>
+                            <td>{{$b->jurusan}}</td>
+                            <td>{{$b->th_masuk}}</td>
+                            <td>{{$b->th_lulus}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
             <h5><p>Pengalaman Kerja:</p></h5>
@@ -136,10 +138,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{$a->pekerjaan->perusahaan}}</td>
-                        <td>{{$a->pekerjaan->jabatan}}</td>
-                        <td>{{$a->pekerjaan->tahun}}</td>
-                        <td>{{$a->pekerjaan->keterangan}}</td>
+                        @foreach($a->pekerjaan as $c)
+                            <tr>
+                                <td>{{$c->perusahaan}}</td>
+                                <td>{{$c->jabatan}}</td>
+                                <td>{{$c->tahun}}</td>
+                                <td>{{$c->keterangan}}</td>
+                            </tr>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>
@@ -147,7 +153,7 @@
                 <!-- Form untuk menghapus data-->
                 <form action="delete={{$a->ktp}}" id="delete{{$a->ktp}}" method="POST">{{csrf_field()}}</form>
                 <div class="col-md-6">
-                    <button type="submit" form="edit{{$a->ktp}}" class="btn btn-info btn-block">Edit</button>
+                    <a type="button" href="edit={{$a->ktp}}" class="btn btn-info btn-block">Edit</a>
                 </div>
                 <div class="col-md-6">
                     <button type="submit" form="delete{{$a->ktp}}" class="btn btn-danger btn-block">Hapus</button>

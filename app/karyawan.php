@@ -12,12 +12,12 @@ class karyawan extends Model
 
 	public function pendidikan()
 	{
-		return $this->hasOne('App\pendidikan','ktp');
+		return $this->hasMany('App\pendidikan','ktp');
 	}
 
 	public function pekerjaan()
 	{
-		return $this->hasOne('App\pengalaman_kerja','ktp');
+		return $this->hasMany('App\pengalaman_kerja','ktp');
 	}
 
 }

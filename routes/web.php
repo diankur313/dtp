@@ -15,5 +15,7 @@ Auth::routes();
 Route::get('/','DtpController@view');
 Route::get('/home','DtpController@view');
 Route::post('delete={id}','DtpController@delete');
+Route::get('edit={id}','DtpController@edit');
+Route::post('post-edit={id}','DtpController@post_edit');
 
 Route::post('post-data','DtpController@post');

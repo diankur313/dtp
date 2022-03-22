@@ -25,8 +25,7 @@ class CreateTablePengalamanKerja extends Migration
             $table->foreign('ktp')
                   ->references('ktp')
                   ->on('karyawan')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
+                  ->onDelete('cascade');
         });
     }
 
